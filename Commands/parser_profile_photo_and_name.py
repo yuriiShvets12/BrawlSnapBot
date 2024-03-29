@@ -14,10 +14,10 @@ async def pars_profile_photo(profile_id):
     url = f"https://brawlbot.xyz/_next/image?url=https%3A%2F%2Fbrawlbot.xyz%2Fapi%2Fimage%2F{profile_id}&w=1920&q=100"
     req = requests.get(url, headers=headers)
     
-    with open("profile_photo.webp", "wb") as file:
+    with open(f"profile_photos\{profile_id}.webp", "wb") as file:
         file.write(req.content)
     
-    with open("profile_photo.webp", "rb") as file:
+    with open(f"profile_photos\{profile_id}.webp", "rb") as file:
         photo = file.read()
 
 #Функция для парсинга имени пользователя
@@ -28,10 +28,10 @@ async def pars_profile_name(profile_id):
     url = f"https://brawlbot.xyz/stats/player/{profile_id}"
     req = requests.get(url, headers=headers)
     
-    with open("index.html", "w", encoding="utf-8") as file:
+    with open(f"profile_names\{profile_id}.html", "w", encoding="utf-8") as file:
         file.write(req.text)
     
-    with open("index.html", "r", encoding="utf-8") as file:
+    with open(f"profile_names\{profile_id}.html", "r", encoding="utf-8") as file:
         src = file.read()
     
     soup = BeautifulSoup(src, "lxml")
