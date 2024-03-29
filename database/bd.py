@@ -93,6 +93,14 @@ async def save_brawl_stars_name_3(brawl_name, user_id):
     cur.execute("UPDATE accounts SET brawl_name_3 = ? WHERE user_id = ?", (brawl_name, user_id))
     db.commit()
 
+#Функция для изменения brawl_id
+async def update_brawl_id(nume, new_brawl_id, user_id):
+    if nume not in [1, 2, 3]:
+        raise ValueError("nume must be 1, 2, or 3")
+    cur.execute(f"UPDATE accounts SET brawl_id_{nume} = ? WHERE user_id = ?", (new_brawl_id, user_id))
+    await db.commit()
+
+
 async def clear_all_cells():
     async with aiosqlite.connect('tg.db') as db:
         async with db.cursor() as cur:
