@@ -41,5 +41,12 @@ async def change_brawl_stars_name(user_id) -> InlineKeyboardMarkup:
     builder.row(InlineKeyboardButton(text="◀️Назад", callback_data="back"))
     return builder.as_markup()
 
+#Кнопка для донатика
+async def donate() -> InlineKeyboardMarkup:
+    builder = InlineKeyboardBuilder()
+    builder.row(InlineKeyboardButton(text = "🎉Отправить Донат🎉", callback_data = "donate"))
+    builder.row(InlineKeyboardButton(text = "❌Отменить", callback_data = "cancel"))
+    return builder.as_markup()
+
 
 
