@@ -98,7 +98,7 @@ async def update_brawl_id(nume, new_brawl_id, user_id):
     if nume not in [1, 2, 3]:
         raise ValueError("nume must be 1, 2, or 3")
     cur.execute(f"UPDATE accounts SET brawl_id_{nume} = ? WHERE user_id = ?", (new_brawl_id, user_id))
-    await db.commit()
+    db.commit()
 
 
 async def clear_all_cells():
