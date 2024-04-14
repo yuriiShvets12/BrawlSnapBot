@@ -1,8 +1,15 @@
 from aiogram.types import Message
 from aiogram import Bot
+from uttils.text import *
 
 async def random_text(message: Message, bot: Bot):
-    await message.answer("Я тебя не понимаю сори😥!")
+    user_lang = message.from_user.language_code
+    data = await handler_all_text(user_lang)
+    text = data[1]
+    await message.answer(text)
 
 async def hello(message: Message, bot: Bot):
-    await message.answer("Привет бро🖐!")
+    user_lang = message.from_user.language_code
+    data = await handler_all_text(user_lang)
+    text = data[2]
+    await message.answer(text)

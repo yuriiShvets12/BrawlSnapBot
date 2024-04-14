@@ -10,4 +10,5 @@ class BrawlStarsID(StatesGroup):
 class Donate(StatesGroup):
     start_to_work = State()
     price = State()
+    currency_on_invoice_message = State()
     

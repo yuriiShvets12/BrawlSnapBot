@@ -3,6 +3,7 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram import types, Router, F, Bot
 from dotenv import load_dotenv
 from database import bd as db
+from uttils.text import *
 import os
 
 
@@ -12,10 +13,13 @@ load_dotenv()
 bot = Bot(token = os.getenv("TOKEN_API"))
 
 #Набор кнопок для команды /Brawl_Stars
-async def communication() -> InlineKeyboardMarkup:
+async def communication(user_lang) -> InlineKeyboardMarkup:
+    data = await battons_communication(user_lang)
+    text_1 = data[1]
+    text_2 = data[2]
     builder = InlineKeyboardBuilder()
-    builder.row(InlineKeyboardButton(text = "Фото профиля", callback_data = "photo"))
-    builder.row(InlineKeyboardButton(text = "Изменить Brawl Stars id", callback_data = "change"))
+    builder.row(InlineKeyboardButton(text = text_1, callback_data = "photo"))
+    builder.row(InlineKeyboardButton(text = text_2, callback_data = "change"))
     return builder.as_markup()
 
 async def brawl_stars_name(user_id) -> InlineKeyboardMarkup:
@@ -28,7 +32,7 @@ async def brawl_stars_name(user_id) -> InlineKeyboardMarkup:
         else:
             callback_data = f"brawl_id_{i}"
         builder.row(InlineKeyboardButton(text=profile_name, callback_data=callback_data))
-    builder.row(InlineKeyboardButton(text="◀️Назад", callback_data="back"))
+    builder.row(InlineKeyboardButton(text="◀️Back", callback_data="back"))
     return builder.as_markup()
 
 async def change_brawl_stars_name(user_id) -> InlineKeyboardMarkup:
@@ -38,14 +42,24 @@ async def change_brawl_stars_name(user_id) -> InlineKeyboardMarkup:
         if profile_name not in ["False", "None"]:
             callback_data = f"new_id_{i}"
             builder.row(InlineKeyboardButton(text=profile_name, callback_data=callback_data))
-    builder.row(InlineKeyboardButton(text="◀️Назад", callback_data="back"))
+    builder.row(InlineKeyboardButton(text="◀️Back", callback_data="back"))
     return builder.as_markup()
 
 #Кнопка для донатика
 async def donate() -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
-    builder.row(InlineKeyboardButton(text = "🎉Отправить Донат🎉", callback_data = "donate"))
-    builder.row(InlineKeyboardButton(text = "❌Отменить", callback_data = "cancel"))
+    builder.row(InlineKeyboardButton(text = "🎉Send donation🎉", callback_data = "donate"))
+    builder.row(InlineKeyboardButton(text = "❌Cancel", callback_data = "cancel"))
+    return builder.as_markup()
+
+#Кнопки для выбора валюты
+async def currency() -> InlineKeyboardMarkup:
+    builder = InlineKeyboardBuilder()
+    builder.row(InlineKeyboardButton(text = "🇺🇦", callback_data = "UAH"),
+                InlineKeyboardButton(text = "🇷🇺", callback_data = "RUB"),
+                InlineKeyboardButton(text = "🇺🇸", callback_data = "USD"),
+                InlineKeyboardButton(text = "🇮🇩", callback_data = "PLN"),
+    )
     return builder.as_markup()
 
 
