@@ -4,7 +4,7 @@ async def command_brawl_stars(user_lang):
         2: "Схоже, ви вказали неправильний ID Brawl Stars.",
         3: "Напишіть свій ID Brawl Stars ще раз (без #):",
         4: "Виберіть ID Brawl Stars з доступних вам:",
-        5: "Напишіть свій ID Brawl Stars (без #):",
+        5: "Напиши свій Brawl Stars ID! Дотримання регістру і # на початку - необов'язкові.",
         6: "Схоже, ви неправильно відправили свій ID Brawl Stars😥\nСпробуйте ще раз.",
         7: "Напишіть свій новий ID Brawl Stars (без #):",
         8: "Не вдалося розпізнати ім'я через неправильний ID",
@@ -16,7 +16,7 @@ async def command_brawl_stars(user_lang):
         2: "Похоже вы указали не правильный Brawl Stars ID.",
         3: "Напиши еще раз свой Brawl Stars ID(без #):",
         4: "Выберите Brawl Stars ID из доступных вам:",
-        5: "Напиши свой Brawl Stars ID(без #):",
+        5: "Напиши свой Brawl Stars ID! Соблюдение регистра и # в начале - необязательны.",
         6: "Похоже вы отправили свой Brawl Stars ID не правильно😥\nПопробуйте еще раз.",
         7: "Напиши свой новый Brawl Stars ID(без #):",
         8: "Не удалось спарсить имя из-за неправильного ID",
@@ -28,7 +28,7 @@ async def command_brawl_stars(user_lang):
         2: "It seems you have entered an incorrect Brawl Stars ID.",
         3: "Write your Brawl Stars ID again (without #):",
         4: "Choose a Brawl Stars ID from those available to you:",
-        5: "Write your Brawl Stars ID (without #):",
+        5: "Write your Brawl Stars ID! Case sensitivity and # at the beginning are optional.",
         6: "It seems you have sent your Brawl Stars ID incorrectly😥\nTry again.",
         7: "Write your new Brawl Stars ID (without #):",
         8: "Failed to parse the name due to incorrect ID",
@@ -40,7 +40,7 @@ async def command_brawl_stars(user_lang):
         2: "Wygląda na to, że podałeś nieprawidłowy ID Brawl Stars.",
         3: "Wpisz ponownie swój ID Brawl Stars (bez #):",
         4: "Wybierz ID Brawl Stars spośród dostępnych dla ciebie:",
-        5: "Wpisz swój ID Brawl Stars (bez #):",
+        5: "Napisz swój Brawl Stars ID! Wielkość liter i # na początku są opcjonalne.",
         6: "Wygląda na to, że wysłałeś swoje ID Brawl Stars niepoprawnie😥\nSpróbuj ponownie.",
         7: "Wpisz swoje nowe ID Brawl Stars (bez #):",
         8: "Nie udało się przeanalizować nazwy z powodu nieprawidłowego ID",
@@ -131,16 +131,16 @@ async def battons_communication(user_lang):
 
 async def command_start(user_lang):
     uk = {
-        1: "🚀Привіт! 🖐️\nЛаскаво просимо до BrawlSnapBot!\n\nБудь ласка, будьте впевнені, що вся ваша інформація залишається абсолютно конфіденційною і використовується виключно для надання вам послуг. 🔒\n\nЯкщо у вас є питання, проблеми з ботом, пропозиції щодо реклами тощо, не соромтеся звертатися до @bak6767. 📨\nПриємного проведення часу! 🎉"
+        1: "🚀 Привіт! 🖐️\n\nЛаскаво просимо до BrawlSnapBot!\n\nЯкщо у вас є які-небудь питання,\nпроблеми з ботом,\nпропозиції з рекламою тощо,\n\nне соромтеся звертатися до @bak6767. 📨\n\nГарного проведення часу! 🎉"
     }
     ru = {
-        1: "🚀Привет! 🖐️\nДобро пожаловать в BrawlSnapBot!\n\nПожалуйста, будьте уверены, что вся ваша информация остается абсолютно конфиденциальной и используется исключительно для предоставления вам услуг. 🔒\n\nЕсли у вас есть вопросы, проблемы с ботом, предложения по рекламе и т.д., не стесняйтесь обращаться к @bak6767. 📨\nПриятного времяпровождения! 🎉"
+        1: "🚀 Привет! 🖐️\n\nДобро пожаловать в BrawlSnapBot!\n\nЕсли у вас есть какие-либо вопросы,\nпроблемы с ботом,\nпредложения по рекламе и т. д.,\n\nне стесняйтесь обращаться к @bak6767. 📨\n\nПриятного времяпровождения! 🎉"
     }
     en = {
-        1: "🚀Hello! 🖐️\nWelcome to BrawlSnapBot!\n\nPlease be assured that all your information remains absolutely confidential and is used exclusively to provide you with services. 🔒\n\nIf you have any questions, issues with the bot, advertising suggestions, etc., feel free to contact @bak6767. 📨\nHave a great time! 🎉"
+        1: "🚀 Hello! 🖐️\n\nWelcome to BrawlSnapBot!\n\nIf you have any questions,\nissues with the bot,\nadvertising suggestions, etc.,\n\nfeel free to contact @bak6767. 📨\n\nHave a great time! 🎉"
     }
     pl = {
-        1: "🚀Cześć! 🖐️\nWitamy w BrawlSnapBot!\n\nProszę mieć pewność, że wszystkie Twoje informacje pozostają absolutnie poufne i są wykorzystywane wyłącznie do świadczenia usług. 🔒\n\nJeśli masz jakiekolwiek pytania, problemy z botem, sugestie dotyczące reklamy itp., śmiało skontaktuj się z @bak6767. 📨\nMiłego czasu! 🎉"
+        1: "🚀 Cześć! 🖐️\n\nWitaj w BrawlSnapBot!\n\nJeśli masz jakiekolwiek pytania,\nproblemy z botem,\npropozycje reklamowe itp.,\n\nnie krępuj się kontaktować z @bak6767. 📨\n\nMiłego spędzania czasu! 🎉"
     }
     if user_lang == "uk":
         return uk

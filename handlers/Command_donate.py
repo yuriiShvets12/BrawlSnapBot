@@ -6,7 +6,7 @@ import os
 from uttils.text import *
 
 # Эта функция используется для обработки команды /donate. Она генерирует разметку для кнопки пожертвования и отправляет сообщение пользователю.
-async def donate(message: Message, bot: Bot):
+async def donate(message: Message):
     user_lang = message.from_user.language_code
     data = await command_donate(user_lang)
     text = data[1]

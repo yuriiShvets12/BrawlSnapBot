@@ -20,6 +20,23 @@ async def communication(user_lang) -> InlineKeyboardMarkup:
     builder = InlineKeyboardBuilder()
     builder.row(InlineKeyboardButton(text = text_1, callback_data = "photo"))
     builder.row(InlineKeyboardButton(text = text_2, callback_data = "change"))
+    builder.row(InlineKeyboardButton(text="◀️Back", callback_data="back"))
+    return builder.as_markup()
+
+async def batton_for_command_start_as_ru() -> InlineKeyboardMarkup:
+    builder = InlineKeyboardBuilder()
+    builder.row(InlineKeyboardButton(text = "Brawl Stars ID", callback_data = "brawl_stars_id"),
+                InlineKeyboardButton(text = "🇺🇸English", callback_data = "lang_us"),
+    )
+    builder.adjust(1)
+    return builder.as_markup()
+
+async def batton_for_command_start_as_us() -> InlineKeyboardMarkup:
+    builder = InlineKeyboardBuilder()
+    builder.row(InlineKeyboardButton(text = "Brawl Stars ID", callback_data = "brawl_stars_id"),
+                InlineKeyboardButton(text = "🇷🇺Русский", callback_data = "lang_ru"),
+    )
+    builder.adjust(1)
     return builder.as_markup()
 
 async def brawl_stars_name(user_id) -> InlineKeyboardMarkup:
@@ -61,6 +78,3 @@ async def currency() -> InlineKeyboardMarkup:
                 InlineKeyboardButton(text = "🇮🇩", callback_data = "PLN"),
     )
     return builder.as_markup()
-
-
-

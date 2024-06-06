@@ -99,21 +99,3 @@ async def update_brawl_id(nume, new_brawl_id, user_id):
         raise ValueError("nume must be 1, 2, or 3")
     cur.execute(f"UPDATE accounts SET brawl_id_{nume} = ? WHERE user_id = ?", (new_brawl_id, user_id))
     db.commit()
-
-
-async def clear_all_cells():
-    async with aiosqlite.connect('tg.db') as db:
-        async with db.cursor() as cur:
-            # Получаем все имена таблиц
-            await cur.execute("SELECT name FROM sqlite_master WHERE type='table';")
-            tables = await cur.fetchall()
-
-            for table in tables:
-                # Удаляем все строки из каждой таблицы
-                await cur.execute(f"DELETE FROM {table[0]};")
-            
-            await db.commit()
-
-
-
-
