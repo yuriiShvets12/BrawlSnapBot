@@ -1,6 +1,6 @@
-# Это файл README.md
+# This is the README.md file
 ---
-__Это телеграм бот для получения фотографии или информации о игровом профиле Braw Stars__
+__This is a Telegram bot for retrieving a photo or information about a Brawl Stars game profile__
 
 
-[мой телеграм](https://t.me/bak6767)
+[My Telegram](https://t.me/bak6767)
